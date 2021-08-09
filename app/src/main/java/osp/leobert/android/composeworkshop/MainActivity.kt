@@ -27,6 +27,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import osp.leobert.android.composeworkshop.post21.P21DrawSample
+import osp.leobert.android.composeworkshop.post21.P21LayoutSample
 import osp.leobert.android.composeworkshop.ui.theme.ComposeWorkShopTheme
 import osp.leobert.android.composeworkshop.ui.theme.MainTxt
 
@@ -52,6 +53,7 @@ class MainActivity : ComponentActivity() {
                         }
 
                         TestList(activity = this@MainActivity, cases = arrayListOf(
+                            "Layout samples" to P21LayoutSample::class.java,
                             "Draw samples" to P21DrawSample::class.java
                         ))
                     }
