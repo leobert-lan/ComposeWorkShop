@@ -24,6 +24,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".post21.P21LayoutSample" />
+        <activity android:name=".post26.P26TextSample" />
     </application>
 
 </manifest>
