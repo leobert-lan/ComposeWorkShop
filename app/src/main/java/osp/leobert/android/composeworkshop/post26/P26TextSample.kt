@@ -4,23 +4,17 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.text.InlineTextContent
 import androidx.compose.foundation.text.appendInlineContent
-import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.alpha
-import androidx.compose.ui.draw.rotate
-import androidx.compose.ui.draw.scale
-import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.text.*
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontStyle
@@ -28,27 +22,37 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.text.style.TextOverflow
-import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.em
 import androidx.compose.ui.unit.sp
 import osp.leobert.android.composeworkshop.ui.theme.ComposeWorkShopTheme
-import osp.leobert.android.composeworkshop.ui.theme.MainTxt
 
 class P26TextSample : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        //* text - 要显示的内容
+        //* modifier - 需要应用的修饰器.
+        //* color - 文字色. 如果是 `Color.Unspecified`, 同时 style 没有配饰颜色, 将会使用 `LocalContentColor`.
+        //* fontSize - 字号. See TextStyle.fontSize.
+        //* fontStyle - 文字样式，例如斜体，See TextStyle.fontStyle.
+        //* fontWeight - 字重，例如加粗.
+        //* fontFamily - 字体系列. See TextStyle.fontFamily.
+        //* letterSpacing - 字间距. See TextStyle.letterSpacing.
+        //* textDecoration - 文字装饰效果，例如下划线. See TextStyle.textDecoration.
+        //* textAlign - 文字段落对齐方式. See TextStyle.textAlign.
+        //* lineHeight - 行高. See TextStyle.lineHeight.
+        //* overflow - 溢出时的处理方案，所谓溢出即文本框显示不下这么多文字.
+        //* softWrap - 是否应用换行符. 如果不应用，则一行写完，`overflow` 、`TextAlign` 无效.
+        //* maxLines - 最大行数，必须大于0.
+        //* inlineContent - 占位的替代信息匹配
+        //* onTextLayout - 绘制文字计算布局时的回调
+        //* style - 样式，例如： color, font, line height 等.
+
         setContent {
             ComposeWorkShopTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(color = MaterialTheme.colors.background) {
-
-//* softWrap - 是否应用换行符. 如果不应用，则一行写完，`overflow` 、`TextAlign` 无效.
-//* maxLines - 最大行数，必须大于0.
-//* inlineContent - A map store composables that replaces certain ranges of the text. It's used to insert composables into text layout. Check InlineTextContent for more information.
-//* onTextLayout - 绘制文字计算布局时的回调
-//* style - 样式，例如： color, font, line height 等.
                     LazyColumn() {
                         item {
                             Text(text = "文字")
@@ -199,8 +203,6 @@ class P26TextSample : ComponentActivity() {
 
                             )
                         }
-
-
                     }
                 }
             }
