@@ -45,11 +45,6 @@ class P26TextFieldSample : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val strOnFieldChanged: (String) -> Unit = {
-
-        }
-
-
         setContent {
             ComposeWorkShopTheme {
                 // A surface container using the 'background' color from the theme

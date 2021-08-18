@@ -28,6 +28,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import osp.leobert.android.composeworkshop.post21.P21DrawSample
 import osp.leobert.android.composeworkshop.post21.P21LayoutSample
+import osp.leobert.android.composeworkshop.post26.P26ButtonSample
 import osp.leobert.android.composeworkshop.post26.P26TextFieldSample
 import osp.leobert.android.composeworkshop.post26.P26TextSample
 import osp.leobert.android.composeworkshop.ui.theme.ComposeWorkShopTheme
@@ -41,11 +42,13 @@ class MainActivity : ComponentActivity() {
                 // A surface container using the 'background' color from the theme
                 Surface(color = MaterialTheme.colors.background) {
                     Column {
-                        Box(modifier = Modifier
-                            .height(48.dp)
-                            .fillMaxWidth()
-                            .background(color = Color.LightGray),
-                            contentAlignment = Alignment.Center) {
+                        Box(
+                            modifier = Modifier
+                                .height(48.dp)
+                                .fillMaxWidth()
+                                .background(color = Color.LightGray),
+                            contentAlignment = Alignment.Center
+                        ) {
 
                             Text(
                                 text = "Jetpack Compose Work Shop",
@@ -54,12 +57,15 @@ class MainActivity : ComponentActivity() {
                             )
                         }
 
-                        TestList(activity = this@MainActivity, cases = arrayListOf(
-                            "Layout samples" to P21LayoutSample::class.java,
-                            "Draw samples" to P21DrawSample::class.java,
-                            "Text samples" to P26TextSample::class.java,
-                            "TextField samples" to P26TextFieldSample::class.java,
-                        ))
+                        TestList(
+                            activity = this@MainActivity, cases = arrayListOf(
+                                "Layout samples" to P21LayoutSample::class.java,
+                                "Draw samples" to P21DrawSample::class.java,
+                                "Text samples" to P26TextSample::class.java,
+                                "TextField samples" to P26TextFieldSample::class.java,
+                                "Button samples" to P26ButtonSample::class.java,
+                            )
+                        )
                     }
                 }
             }
@@ -85,15 +91,19 @@ fun DefaultPreview() {
 fun TestList(activity: Activity, cases: List<Pair<String, Class<out Activity>>>) {
     LazyColumn(contentPadding = PaddingValues(horizontal = 16.dp, vertical = 8.dp)) {
         itemsIndexed(items = cases) { _, item ->
-            Box(modifier = Modifier
-                .height(48.dp)
-                .fillMaxWidth()
-                .background(color = Color.LightGray,
-                    shape = RoundedCornerShape(CornerSize(6.dp)))
-                .clickable {
-                    activity.startActivity(Intent(activity, item.second))
-                },
-                contentAlignment = Alignment.Center) {
+            Box(
+                modifier = Modifier
+                    .height(48.dp)
+                    .fillMaxWidth()
+                    .background(
+                        color = Color.LightGray,
+                        shape = RoundedCornerShape(CornerSize(6.dp))
+                    )
+                    .clickable {
+                        activity.startActivity(Intent(activity, item.second))
+                    },
+                contentAlignment = Alignment.Center
+            ) {
                 Text(
                     text = item.first,
                     color = MainTxt,
