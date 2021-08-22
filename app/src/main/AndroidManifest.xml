@@ -27,6 +27,7 @@
         <activity android:name=".post26.P26TextSample" />
         <activity android:name=".post26.P26TextFieldSample" />
         <activity android:name=".post26.P26ButtonSample" />
+        <activity android:name=".post27.P27IconSample" />
     </application>
 
 </manifest>

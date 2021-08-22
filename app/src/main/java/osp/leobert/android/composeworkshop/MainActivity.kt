@@ -31,6 +31,7 @@ import osp.leobert.android.composeworkshop.post21.P21LayoutSample
 import osp.leobert.android.composeworkshop.post26.P26ButtonSample
 import osp.leobert.android.composeworkshop.post26.P26TextFieldSample
 import osp.leobert.android.composeworkshop.post26.P26TextSample
+import osp.leobert.android.composeworkshop.post27.P27IconSample
 import osp.leobert.android.composeworkshop.ui.theme.ComposeWorkShopTheme
 import osp.leobert.android.composeworkshop.ui.theme.MainTxt
 
@@ -64,6 +65,7 @@ class MainActivity : ComponentActivity() {
                                 "Text samples" to P26TextSample::class.java,
                                 "TextField samples" to P26TextFieldSample::class.java,
                                 "Button samples" to P26ButtonSample::class.java,
+                                "Icon samples" to P27IconSample::class.java,
                             )
                         )
                     }
