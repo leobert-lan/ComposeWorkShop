@@ -4,27 +4,21 @@ import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.Icon
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
-import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Call
 import androidx.compose.material.icons.outlined.Call
 import androidx.compose.material.icons.rounded.Call
 import androidx.compose.material.icons.sharp.Call
 import androidx.compose.material.icons.twotone.Call
-import androidx.compose.runtime.remember
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ImageBitmap
-import androidx.compose.ui.graphics.asImageBitmap
-import androidx.compose.ui.graphics.painter.ColorPainter
-import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.res.imageResource
-import androidx.core.graphics.drawable.toBitmap
+import androidx.compose.ui.res.painterResource
 import osp.leobert.android.composeworkshop.R
 import osp.leobert.android.composeworkshop.post21.CodeSample
 import osp.leobert.android.composeworkshop.ui.theme.ComposeWorkShopTheme
@@ -101,22 +95,14 @@ class P27IconSample : ComponentActivity() {
                                 code =
                                 """
                                 painter demo:
-                                val color = Color.Blue
-                                val painter = remember(key1 = color) {
-                                    ColorPainter(color)
-                                }
                                 Icon(
-                                    painter,
-                                    contentDescription = "Call",
+                                painterResource(id = R.drawable.baseline_fingerprint_black_24dp),
+                                contentDescription = "Call",
                                 )
                                 """.trimIndent()
                             )
-                            val color = Color.Blue
-                            val painter = remember(key1 = color) {
-                                ColorPainter(color)
-                            }
                             Icon(
-                                painter,
+                                painterResource(id = R.drawable.baseline_fingerprint_black_24dp),
                                 contentDescription = "Call",
                             )
                         }
@@ -124,7 +110,7 @@ class P27IconSample : ComponentActivity() {
                             Icon(
                                 ImageBitmap.imageResource(id = R.drawable.baseline_fingerprint_black_24dp),
                                 contentDescription = "Check fingerprint",
-                                tint = Color.LightGray
+                                tint = Color.Green
                             )
                         }
 
