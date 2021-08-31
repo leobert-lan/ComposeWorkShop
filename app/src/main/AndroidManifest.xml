@@ -30,6 +30,7 @@
         <activity android:name=".post27.P27IconSample" />
         <activity android:name=".post27.P27ImageSample" />
         <activity android:name=".post28.P28SwitchRbCbSample" />
+        <activity android:name=".post29.P29BoxRowColumnSample" />
     </application>
 
 </manifest>

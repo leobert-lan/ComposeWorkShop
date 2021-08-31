@@ -2,7 +2,6 @@ package osp.leobert.android.composeworkshop
 
 import android.app.Activity
 import android.content.Intent
-import android.graphics.drawable.shapes.Shape
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -19,10 +18,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.ColorMatrix
-import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -34,6 +30,7 @@ import osp.leobert.android.composeworkshop.post26.P26TextSample
 import osp.leobert.android.composeworkshop.post27.P27IconSample
 import osp.leobert.android.composeworkshop.post27.P27ImageSample
 import osp.leobert.android.composeworkshop.post28.P28SwitchRbCbSample
+import osp.leobert.android.composeworkshop.post29.P29BoxRowColumnSample
 import osp.leobert.android.composeworkshop.ui.theme.ComposeWorkShopTheme
 import osp.leobert.android.composeworkshop.ui.theme.MainTxt
 
@@ -70,6 +67,7 @@ class MainActivity : ComponentActivity() {
                                 "Icon samples" to P27IconSample::class.java,
                                 "Image samples" to P27ImageSample::class.java,
                                 "Switch,Checkbox,RadioButton samples" to P28SwitchRbCbSample::class.java,
+                                "Box,Row,Column samples" to P29BoxRowColumnSample::class.java,
                             )
                         )
                     }
@@ -97,8 +95,13 @@ fun DefaultPreview() {
 fun TestList(activity: Activity, cases: List<Pair<String, Class<out Activity>>>) {
     LazyColumn(contentPadding = PaddingValues(horizontal = 16.dp, vertical = 8.dp)) {
         itemsIndexed(items = cases) { _, item ->
-            Box(
-                modifier = Modifier
+            Column(
+
+                horizontalAlignment = Alignment.CenterHorizontally,
+            ) {
+                Spacer(modifier = Modifier.size(3.dp))
+
+                Box(modifier = Modifier
                     .height(48.dp)
                     .fillMaxWidth()
                     .background(
@@ -108,13 +111,16 @@ fun TestList(activity: Activity, cases: List<Pair<String, Class<out Activity>>>)
                     .clickable {
                         activity.startActivity(Intent(activity, item.second))
                     },
-                contentAlignment = Alignment.Center
-            ) {
-                Text(
-                    text = item.first,
-                    color = MainTxt,
-                    textAlign = TextAlign.Center
-                )
+                    contentAlignment = Alignment.Center) {
+                    Text(
+
+                        text = item.first,
+                        color = MainTxt,
+                        textAlign = TextAlign.Center
+                    )
+                }
+
+                Spacer(modifier = Modifier.size(3.dp))
             }
         }
     }
