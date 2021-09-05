@@ -37,6 +37,7 @@
         <activity android:name=".post27.P27ImageSample" />
         <activity android:name=".post28.P28SwitchRbCbSample" />
         <activity android:name=".post29.P29BoxRowColumnSample" />
+        <activity android:name=".post30.P30LazyRowColumnSample" />
     </application>
 
 </manifest>
