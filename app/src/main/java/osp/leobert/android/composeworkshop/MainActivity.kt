@@ -31,6 +31,7 @@ import osp.leobert.android.composeworkshop.post27.P27IconSample
 import osp.leobert.android.composeworkshop.post27.P27ImageSample
 import osp.leobert.android.composeworkshop.post28.P28SwitchRbCbSample
 import osp.leobert.android.composeworkshop.post29.P29BoxRowColumnSample
+import osp.leobert.android.composeworkshop.post30.P30LazyRowColumnSample
 import osp.leobert.android.composeworkshop.ui.theme.ComposeWorkShopTheme
 import osp.leobert.android.composeworkshop.ui.theme.MainTxt
 
@@ -68,6 +69,7 @@ class MainActivity : ComponentActivity() {
                                 "Image samples" to P27ImageSample::class.java,
                                 "Switch,Checkbox,RadioButton samples" to P28SwitchRbCbSample::class.java,
                                 "Box,Row,Column samples" to P29BoxRowColumnSample::class.java,
+                                "LazyColumn samples" to P30LazyRowColumnSample::class.java,
                             )
                         )
                     }
