@@ -35,32 +35,57 @@ class P21LayoutSample : ComponentActivity() {
 
                     LazyColumn() {
                         item {
+
+                            Box(
+                                Modifier
+                                    .size(150.dp, 150.dp)
+                                    .background(Color.Blue)
+                            ) {
+
+                                Box(
+                                    Modifier
+                                        .size(150.dp, 150.dp)
+                                        .offset(20.dp, 20.dp)
+                                        .background(Color.Green)
+                                )
+                            }
+                        }
+                        item {
                             CodeSample("TODO")
 
                             Box {
-                                Box(Modifier.fillMaxSize().background(Color.Cyan))
                                 Box(
-                                    Modifier.matchParentSize()
+                                    Modifier
+                                        .fillMaxSize()
+                                        .background(Color.Cyan)
+                                )
+                                Box(
+                                    Modifier
+                                        .matchParentSize()
                                         .padding(top = 20.dp, bottom = 20.dp)
                                         .background(Color.Yellow)
                                 )
                                 Box(
-                                    Modifier.matchParentSize()
+                                    Modifier
+                                        .matchParentSize()
                                         .padding(40.dp)
                                         .background(Color.Magenta)
                                 )
                                 Box(
-                                    Modifier.align(Alignment.Center)
+                                    Modifier
+                                        .align(Alignment.Center)
                                         .size(300.dp, 300.dp)
                                         .background(Color.Green)
                                 )
                                 Box(
-                                    Modifier.align(Alignment.TopStart)
+                                    Modifier
+                                        .align(Alignment.TopStart)
                                         .size(150.dp, 150.dp)
                                         .background(Color.Red)
                                 )
                                 Box(
-                                    Modifier.align(Alignment.BottomEnd)
+                                    Modifier
+                                        .align(Alignment.BottomEnd)
                                         .size(150.dp, 150.dp)
                                         .background(Color.Blue)
                                 )
